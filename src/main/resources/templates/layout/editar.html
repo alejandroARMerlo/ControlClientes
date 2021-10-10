@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section th:fragment="editar">
+
+		<form th:action="@{/addClient}" th:object="${client}" method="post"
+			class="was-validated">
+
+			<section th:replace="layout/botonesEditar :: botones"></section>
+
+			<div class="container">
+
+				<div class="card">
+					<div class="card-header">
+						<h4>Editar</h4>
+					</div>
+					<div class="card-body">
+
+						<input type="hidden" id="ape" th:field="*{idClient}" />
+
+
+						<div class="mb-3">
+							<label for="nom" class="form-label">Nombre</label> <input
+								type="text" class="form-control" id="nom" th:field="*{nombre}"
+								required="required" />
+
+						</div>
+
+						<div class="mb-3">
+							<label for="ape" class="form-label">Apellido</label> <input
+								type="text" class="form-control" id="ape" th:field="*{apellido}"
+								required="required">
+
+						</div>
+
+
+						<div class="mb-3">
+							<label for="exampleInputEmail" class="form-label">Correo</label>
+							<input type="email" class="form-control" id="exampleInputEmail"
+								aria-describedby="emailHelp" th:field="*{email}" required="true">
+							<div id="emailHelp" class="form-text">We'll never share
+								your email with anyone else.</div>
+						</div>
+
+						<div class="mb-3">
+							<label for="phone" class="form-label">Telefono</label> <input
+								type="tel" class="form-control" id="phone"
+								th:field="*{telefono}">
+
+						</div>
+
+						<div class="mb-3">
+							<label for="sal" class="form-label">Saldo</label> <input
+								type="number" class="form-control" id="sal" th:field="*{saldo}"
+								step="any">
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</form>
+
+	</section>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

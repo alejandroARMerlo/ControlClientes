@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/commonPage :: head">
+<meta charset="ISO-8859-1">
+<title>botones editar</title>
+</head>
+<body>
+
+       <section th:fragment="botones">
+       
+       
+                <div class="container py-4 mb-4 bg-light">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a th:href="@{/}" class="btn btn-ligth btn-block">
+                                <i class="fas fa-arrow-left"></i> [[#{cliente.regresar}]]
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-success btn-block">
+                                <i class="fas fa-check"></i>  [[#{cliente.guardar}]]  
+                            </button>
+                        </div>
+                        <div class="col-md-3">
+                            <a th:href="@{/deleteClient(idClient=${client.idClient})}"
+                                class="btn btn-danger btn-block">
+                                <i class="fas fa-trash"></i> [[#{cliente.eliminar}]] 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                   
+       </section>
+</body>
+</html>

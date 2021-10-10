@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="plantilla/commonPage :: head">
+<meta charset="ISO-8859-1">
+<title>boton agregar</title>
+</head>
+<body>
+
+    <section th:fragment="agregarCliente">
+       
+       <div class="container">
+    
+         <div class="row justify-content-md-center">
+       
+           <!-- COLUMNA DEL BOTON AGREGAR -->
+			    <div class="col-7  ">
+			    
+			        	<!-- Button trigger modal -->
+							<button type="button" class="btn btn-primary  px-5 my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+							 <i class="fas fa-plus"></i>  [[#{cliente.agregar}]]
+							</button>
+							
+							<!-- Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							      <div class="modal-content">
+							     
+									      <div class="modal-header bg-info text-light">
+									        <h5 class="modal-title" id="exampleModalLabel" th:text="#{cliente.titulo-modal}"></h5>
+									        <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+									      </div>
+									   <form th:action="@{/addClient}"  th:object="${client}"   method="post" class="was-validated">
+									      <div class="modal-body">		        
+											        
+											        
+											              <div class="mb-3">
+														    <label for="nom" class="form-label" th:text="#{cliente.nombre}">Nombre</label>
+														    <input type="text" class="form-control" id="nom" th:field="*{nombre}" required="true">
+														    
+														  </div>
+														  
+														  <div class="mb-3">
+														    <label for="ape" class="form-label" th:text="#{cliente.apellido}">Apellido</label>
+														    <input type="text" class="form-control" id="ape" th:field="*{apellido}" required="true">
+														    
+														  </div>
+											        
+											        
+														  <div class="mb-3">
+														    <label for="exampleInputEmail" class="form-label" th:text="#{cliente.correo}" >Correo</label>
+														    <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" th:field="*{email}" required="true">
+														    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+														  </div>
+														  
+														  <div class="mb-3">
+														    <label for="phone" class="form-label" th:text="#{cliente.telefono}" >Telefono</label>
+														    <input type="tel" class="form-control" id="phone" th:field="*{telefono}">
+														    
+														  </div>
+														  
+														  <div class="mb-3">
+														    <label for="sal" class="form-label" th:text="#{cliente.saldo}">Saldo</label>
+														    <input type="number" class="form-control" id="sal" th:field="*{saldo}" step="any">
+														    
+														  </div>	        
+									        
+									      </div>
+									      
+									      <div class="modal-footer">
+									        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" th:text="#{cliente.boton-cerrar}">Cerrar</button>
+									        <button type="submit" class="btn btn-primary" th:text="#{cliente.guardar}">Guardar</button>
+									      </div>
+									      
+									    </form> 
+							      </div>
+							  </div>
+							</div>
+			            
+			    </div>
+       </div>      
+
+
+     </div>
+
+</section>
+
+</body>
+</html>

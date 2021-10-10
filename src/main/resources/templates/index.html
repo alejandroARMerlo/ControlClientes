@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/commonPage :: head">
+
+<meta charset="UTF-8">
+
+<title>index</title>   
+ 
+</head>
+<body>
+
+ 
+			            <header th:replace="plantilla/commonPage :: cabecera"> </header> 			            
+			            
+			              <section th:replace="layout/agregarCliente :: agregarCliente"></section>			            
+			            
+			             <section th:replace="layout/listadoClientes :: listadoClientes"></section>     
+      
+                          <footer th:replace="plantilla/commonPage :: foot">    </footer>
+      
+
+    
+      
+
+</body>
+</html>
